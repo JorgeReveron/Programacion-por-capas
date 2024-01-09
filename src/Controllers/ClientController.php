@@ -4,12 +4,14 @@ namespace Jorge\ProgramacionPorCapas\Controllers;
 class ClientController {
   private $router;
 
-  public function __construct($router){
-    $this->router = $router;
-  }
+  // public function __construct($router){
+  //   $this->router = $router;
+  // }
   
   public function index() {
-    echo "Esto es index de ClientController";
+    // echo "Esto es index de ClientController";
+    global $blade;
+    echo $blade->view()->make("client.index")->render();
   }
   public function show($params) {
     $id = $params["id"];

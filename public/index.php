@@ -1,5 +1,10 @@
 <?php
 require_once "../vendor/autoload.php";
+use Philo\Blade\Blade;
+
+$views = "../src/views";
+$cache = "../cache";
+$blade = new Blade($views,$cache);
 
 // Router system
 $router = new AltoRouter();
