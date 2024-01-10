@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>document</title>
-</head>
-<body>
-  <h1>index en Client controller</h1>
-</body>
-</html>
+@extends("layouts.master")
+
+@section("title", "List Clients")
+
+@section("subtitle", "Listado de clientes")
+
+@section("container")
+<p>Es vip: {{$vip}}</p>
+@if($vip)
+<h2>Eres un cliente VIP</h2>
+@else
+<h2>No eres un cliente VIP</h2>
+@endif
+<p>Parrafo siempre visible</p>
+<p>{{count($clients)}}</p>
+<ul>
+@foreach($clients as $client)
+  <li>{{$client}}</li>
+@endforeach
+</ul>
+@endsection
